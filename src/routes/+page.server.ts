@@ -1,4 +1,3 @@
-import cohere from 'cohere-ai';
 import type { RequestEvent } from './$types';
 // import { response } from '../mockRes';
 import { fail } from '@sveltejs/kit';
@@ -28,7 +27,7 @@ export const actions = {
 		const response = await CohereHandler.generate(prompt.toString());
 		console.log('response ', response.body.generations[0].text);
 		return {
-			generations: response.body.generations[0].text.split(/\n/)
+			generations: response.body.generations[0].text.split(/\n/).filter((question) => !!question)
 			// generations: response.body.generations
 		};
 	}
