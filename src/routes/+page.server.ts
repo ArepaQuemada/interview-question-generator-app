@@ -2,10 +2,15 @@ import type { RequestEvent } from './$types';
 // import { response } from '../mockRes';
 import { fail } from '@sveltejs/kit';
 import { COHERE_API_KEY } from '$env/static/private';
-import { CohereHandler } from '$lib/server/CohereHandler';
+import { CohereHandler } from '$lib/server/cohere-handler';
+
+/**
+ * Apply styles to page
+ * Add skeleton to wait for loaded questions
+ * Deploy page
+ */
 
 export function load() {
-	// TOODO: Init COHERE with api key on first load, not working at the time
 	CohereHandler.init(COHERE_API_KEY);
 }
 
