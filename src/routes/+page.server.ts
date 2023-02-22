@@ -3,6 +3,7 @@ import type { RequestEvent } from './$types';
 import { fail } from '@sveltejs/kit';
 import { COHERE_API_KEY } from '$env/static/private';
 import { CohereHandler } from '$lib/server/cohere-handler';
+import { GenerateQuestions } from '$lib/server/generate-questions';
 
 /**
  * Apply styles to page
@@ -23,7 +24,7 @@ export const actions = {
 			return fail(400, { prompt, missing: true });
 		}
 
-		const response = await CohereHandler.generate(prompt.toString());
+		const response = await new GenerateQuestions().generate(prompt.toString());
 		console.log('response ', response.body.generations[0].text);
 		return {
 			generations: response.body.generations[0].text.split(/\n/).filter((question) => !!question)

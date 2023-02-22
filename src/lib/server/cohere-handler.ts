@@ -5,17 +5,22 @@ export class CohereHandler {
 		cohere.init(api_key);
 	}
 
-	static async generate(prompt: string) {
+	static async generate(
+		prompt: string,
+		model: string,
+		max_tokens: number,
+		stop_sequences: string[] = []
+	) {
 		return await cohere.generate({
-			model: 'command-xlarge-nightly',
-			prompt: prompt,
-			max_tokens: 300,
+			model,
+			prompt,
+			max_tokens,
 			temperature: 1.2,
 			k: 0,
 			p: 1,
 			frequency_penalty: 0,
 			presence_penalty: 0,
-			stop_sequences: [],
+			stop_sequences,
 			return_likelihoods: 'NONE'
 		});
 	}
