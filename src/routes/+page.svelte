@@ -2,8 +2,10 @@
 	import { enhance } from '$app/forms';
 	import type { ActionData, PageData } from './$types';
 
-	export let form: ActionData;
-
+	export let form: ActionData & {
+		generations: string[];
+	};
+	form?.generations;
 	$: console.log('form ', form?.generations);
 </script>
 
