@@ -7,9 +7,9 @@ export class CohereHandler {
 
 	static async generate(prompt: string) {
 		return await cohere.generate({
-			model: 'command-xlarge-20221108',
+			model: 'command-xlarge-nightly',
 			prompt: prompt,
-			max_tokens: 500,
+			max_tokens: 300,
 			temperature: 1.2,
 			k: 0,
 			p: 1,
