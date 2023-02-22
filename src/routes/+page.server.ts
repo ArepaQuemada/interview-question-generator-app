@@ -5,14 +5,6 @@ import { COHERE_API_KEY } from '$env/static/private';
 import { CohereHandler } from '$lib/server/cohere-handler';
 import { GenerateQuestions } from '$lib/server/generate-questions';
 
-/**
- * Apply styles to page
- * Add skeleton to wait for loaded questions
- * Deploy page
- * Add title generator see https://cohere.ai/examples/transcript-summarization
- * Save in memory chats to access them as dynamic routes with answers
- */
-
 export function load() {
 	CohereHandler.init(COHERE_API_KEY);
 }
