@@ -12,7 +12,9 @@
 	});
 </script>
 
-<main class="bg-primary-ligth flex w-full h-[75vh] justify-center text-white overflow-y-scroll">
+<main
+	class="bg-primary-ligth flex w-full h-[calc(100vh-250px)] md:h-[75vh] justify-center text-white overflow-y-scroll"
+>
 	<div class="max-w-md p-1">
 		{#if questions}
 			<ol>
