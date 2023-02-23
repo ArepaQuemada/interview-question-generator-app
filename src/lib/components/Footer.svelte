@@ -1,10 +1,9 @@
-<footer class="bg-primary-dark sticky w-full pt-4 pb-4 pr-1 pl-4 h-max text-white">
-	<p>
-		Easily generate accurate job interview questions: Just type below and wait for magic to happen
-	</p>
+<footer class="bg-primary-dark sticky w-full pt-4 pb-4 pr-1 pl-1 h-max text-white">
 	<slot />
-	<p>
-		Disclaimer: This project is used to paly around using cohere API, it's not intended to profit
-		from it
-	</p>
+	<div class="text-center">
+		<p class="text-gray-400 text-sm mt-2">
+			Disclaimer: This project is used to paly around using cohere API, it's not intended to profit
+			from it
+		</p>
+	</div>
 </footer>
