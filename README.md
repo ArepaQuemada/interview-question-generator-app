@@ -11,7 +11,7 @@ Genera preguntas para entrevistas de trabajo usando por medio de IA usando la AP
 - [ ] Add type efect when getting answer
 - [ ] Add custom styles to scroll bar
 - [ ] Add missing styles to form and generate armony between colors and components
-- [ ] Deploy page
+- [x] Deploy page
 - [ ] Create dynamic routes for old chats
 - [ ] Save in memory chats to access them as dynamic routes with answers
  
