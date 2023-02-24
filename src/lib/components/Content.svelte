@@ -11,12 +11,22 @@
 		  }[]
 		| null;
 
+	let mainElement: HTMLElement;
 	let questionsToShow: QuestionsToSHow = null;
 	let isLoading = true;
 	let hasError = false;
 	let prompt = '';
 
+	const scrollToBottom = () => {
+		if (!mainElement) return;
+		mainElement.scroll({
+			top: mainElement.scrollHeight * 500,
+			behavior: 'smooth'
+		});
+	};
+
 	const unsuscribeGeneratedQuestions = generatedQuestions.subscribe((value) => {
+		scrollToBottom();
 		if (!questionsToShow) {
 			questionsToShow = [{ questions: value, prompt }];
 		} else {
@@ -25,6 +35,7 @@
 	});
 
 	const unsuscribeFormStatus = formSatus.subscribe((value) => {
+		scrollToBottom();
 		isLoading = value.isLoading;
 		hasError = value.hasError;
 		prompt = value.prompt;
@@ -37,7 +48,8 @@
 </script>
 
 <main
-	class="bg-primary-ligth flex w-full h-[calc(100vh-14rem)] md:h-[calc(100vh-11.8rem)] justify-center text-white overflow-y-scroll"
+	class="bg-primary-ligth flex w-full h-[calc(100vh-14rem)] md:h-[calc(100vh-11.8rem)] justify-center text-white overflow-y-scroll ease-in-out duration-300"
+	bind:this={mainElement}
 >
 	<div class="w-full max-w-lg p-1">
 		{#if questionsToShow}
