@@ -37,7 +37,7 @@
 </script>
 
 <main
-	class="bg-primary-ligth flex w-full h-[calc(100vh-300px)] md:h-[75vh] justify-center text-white overflow-y-scroll"
+	class="bg-primary-ligth flex w-full h-[calc(100vh-13.8rem)] md:h-[calc(100vh-11.8rem)] justify-center text-white overflow-y-scroll"
 >
 	<div class="w-full max-w-lg p-1">
 		{#if questionsToShow}

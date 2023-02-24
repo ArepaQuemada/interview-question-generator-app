@@ -1,4 +1,4 @@
-<header class="bg-primary p-4 text-white md:h-[10vh]">
+<header class="bg-primary p-4 text-white h-16">
 	<div class="flex gap-4 h-full items-center">
 		<div class="w-8">
 			<svg
