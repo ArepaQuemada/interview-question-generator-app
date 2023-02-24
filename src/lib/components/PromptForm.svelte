@@ -2,6 +2,7 @@
 	import { onDestroy } from 'svelte';
 	import { formSatus } from '../../store/form-status.store';
 	import { generatedQuestions } from '../../store/questions.store';
+	import Loading from './Loading.svelte';
 
 	let isLoading = false;
 
@@ -58,6 +59,12 @@
 		disabled={isLoading}
 		type="submit"
 		class="w-full md:w-1/6 text-white bg-secondary  focus:ring-4  font-medium rounded-lg text-sm px-5 py-2.5   hover:bg-secondary focus:outline-none focus:ring-blue-800"
-		>Submit</button
 	>
+		{#if isLoading}
+			<Loading />
+			Loading...
+		{:else}
+			Submit
+		{/if}
+	</button>
 </form>
